@@ -7,7 +7,7 @@ const paginaInicio = computed(() =>  route.name === 'inicio' );
 
 </script>
 <template>
-    <header class="bg-slate-600">
+    <header class="bg-slate-600" :class="{header:paginaInicio}">
         <div class="mx-auto container px-5 py-16">
             <div class="flex justify-between items-center">
                 <div>
@@ -41,4 +41,13 @@ const paginaInicio = computed(() =>  route.name === 'inicio' );
                 value="Buscar recetas">
         </form>
     </div>
-</header></template>    
+</header>
+</template>    
+
+<style>
+    .header{
+        background-image: url('/img/bg.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+</style>
