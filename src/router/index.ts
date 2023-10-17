@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import InicioViewVue from '../views/InicioView.vue';
-import FavoritosViewVue from '../views/FavoritosView.vue';
 
 
 const router = createRouter({
@@ -14,7 +13,7 @@ const router = createRouter({
     {
       path: '/favoritos',
       name: 'favoritos',
-      component: () => FavoritosViewVue
+      component: () => import('../views/FavoritosView.vue') // Hace que solo se cargue si el usuario ingresa a Favoritos
     }
   ]
 })
