@@ -5,7 +5,6 @@ import { useBebidasStore } from '../stores/bebidas.js';
 
 const route = useRoute();
 const store = useBebidasStore();
-console.log(store.categorias)
 
 const paginaInicio = computed(() =>  route.name === 'inicio' );
 
