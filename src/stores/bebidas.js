@@ -1,12 +1,13 @@
 import { defineStore } from "pinia";
 import { ref,onMounted } from "vue";
-import { Axios } from "axios";
+import axios from "axios";
 
 export const useBebidasStore = defineStore('bebidas',()=>{
     const categorias = ref([]);
     onMounted(async ()=>{
-        const data = await Axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list');
-        categorias.value = data.data.drinks;
+        const {data: {drinks}} = await axios('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list');
+        console.log(drinks);
+        categorias.value = drinks;
     });
 
     return {
